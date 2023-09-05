@@ -28,10 +28,9 @@ public class Odontologo {
     public Long getId() {
         return id;
     }
-    // SE DEBE BORRAR
-    //public void setId(Long id) {
-        //this.id = id;
-    //}
+
+    public void setId(Long id) {
+        this.id = id;}
 
     public String getMatricula() {
         return matricula;

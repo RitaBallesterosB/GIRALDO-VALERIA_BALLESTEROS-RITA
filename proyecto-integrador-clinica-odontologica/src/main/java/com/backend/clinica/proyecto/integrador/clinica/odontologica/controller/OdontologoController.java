@@ -7,6 +7,8 @@ import com.backend.clinica.proyecto.integrador.clinica.odontologica.dto.entrada.
 import com.backend.clinica.proyecto.integrador.clinica.odontologica.dto.entrada.paciente.PacienteEntradaDto;
 import com.backend.clinica.proyecto.integrador.clinica.odontologica.dto.salida.odontologo.OdontologoSalidaDto;
 import com.backend.clinica.proyecto.integrador.clinica.odontologica.dto.salida.paciente.PacienteSalidaDto;
+import com.backend.clinica.proyecto.integrador.clinica.odontologica.exceptions.BadRequestException;
+import com.backend.clinica.proyecto.integrador.clinica.odontologica.exceptions.ResourceNotFoundException;
 import com.backend.clinica.proyecto.integrador.clinica.odontologica.service.IOdontologoService;
 import com.backend.clinica.proyecto.integrador.clinica.odontologica.service.IPacienteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,7 +56,7 @@ public class OdontologoController {
 
     //DELETE
     @DeleteMapping("eliminar/{id}")
-    public ResponseEntity<?> eliminarOdontologo(@PathVariable Long id){
+    public ResponseEntity<?> eliminarOdontologo(@PathVariable Long id) throws ResourceNotFoundException {
         odontologoService.eliminarOdontologo(id);
         return new ResponseEntity<>("Odontologo eliminado correctamente", HttpStatus.NO_CONTENT);
     }

@@ -5,6 +5,8 @@ import com.backend.clinica.proyecto.integrador.clinica.odontologica.dto.entrada.
 import com.backend.clinica.proyecto.integrador.clinica.odontologica.dto.entrada.paciente.PacienteEntradaDto;
 import com.backend.clinica.proyecto.integrador.clinica.odontologica.dto.salida.paciente.PacienteSalidaDto;
 import com.backend.clinica.proyecto.integrador.clinica.odontologica.entity.Paciente;
+import com.backend.clinica.proyecto.integrador.clinica.odontologica.exceptions.BadRequestException;
+import com.backend.clinica.proyecto.integrador.clinica.odontologica.exceptions.ResourceNotFoundException;
 import com.backend.clinica.proyecto.integrador.clinica.odontologica.repository.PacienteRepository;
 import com.backend.clinica.proyecto.integrador.clinica.odontologica.service.IPacienteService;
 import org.modelmapper.ModelMapper;
@@ -24,6 +26,7 @@ public class PacienteService implements IPacienteService {
     public PacienteService(PacienteRepository pacienteRepository, ModelMapper modelMapper) {
         this.pacienteRepository = pacienteRepository;
         this.modelMapper = modelMapper;
+        configureMapping();
     }
 
 
@@ -79,13 +82,36 @@ public class PacienteService implements IPacienteService {
         return pacientes;
     }
 
-    public void eliminarPaciente(Long id) {
+    public void eliminarPaciente(Long id) throws ResourceNotFoundException {
         if (buscarPacientePorId(id) != null) {
             pacienteRepository.deleteById(id);
             LOGGER.warn("Se ha eliminado el paciente con id: {}", id);
         } else {
             LOGGER.error("No se ha encontrado el paciente con id {}", id);
+            throw new ResourceNotFoundException("No se ha encontrado el paciente con id " + id);
         }
 
+    }
+
+    private void configureMapping() {
+        modelMapper.typeMap(PacienteEntradaDto.class, Paciente.class)
+                .addMappings(mapper -> mapper.map(PacienteEntradaDto::getDomicilio, Paciente::setDomicilio));
+        modelMapper.typeMap(Paciente.class, PacienteSalidaDto.class)
+                .addMappings(mapper -> mapper.map(Paciente::getDomicilio, PacienteSalidaDto::setDomicilio));
+        modelMapper.typeMap(PacienteModificacionEntradaDto.class, Paciente.class)
+                .addMappings(mapper -> mapper.map(PacienteModificacionEntradaDto::getDomicilio, Paciente::setDomicilio));
+
+    }
+
+    public Paciente dtoEntradaAEntidad(PacienteEntradaDto pacienteEntradaDto) {
+        return modelMapper.map(pacienteEntradaDto, Paciente.class);
+    }
+
+    public PacienteSalidaDto entidadADtoSalida(Paciente paciente) {
+        return modelMapper.map(paciente, PacienteSalidaDto.class);
+    }
+
+    public Paciente dtoModificadoAEntidad(PacienteModificacionEntradaDto pacienteEntradaDto) {
+        return modelMapper.map(pacienteEntradaDto, Paciente.class);
     }
 }
