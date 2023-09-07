@@ -23,14 +23,13 @@ public class OdontologoService implements IOdontologoService {
     private final OdontologoRepository odontologoRepository;
     private final ModelMapper modelMapper;
 
-
     public OdontologoService(OdontologoRepository odontologoRepository, ModelMapper modelMapper) {
         this.odontologoRepository = odontologoRepository;
         this.modelMapper = modelMapper;
     }
 
-    public OdontologoSalidaDto registrarOdontologo(OdontologoEntradaDto odontologo)  {
-        Odontologo odGuardado = odontologoRepository.save(modelMapper.map(odontologo, Odontologo.class));
+    public OdontologoSalidaDto registrarOdontologo(OdontologoEntradaDto odontologo) {
+        Odontologo odGuardado = odontologoRepository.save(dtoEntradaAEntidad(odontologo));
         OdontologoSalidaDto odontologoSalidaDto = modelMapper.map(odGuardado, OdontologoSalidaDto.class);
         LOGGER.info("Odontologo guardado: {}", odontologoSalidaDto);
         return odontologoSalidaDto;
@@ -38,10 +37,12 @@ public class OdontologoService implements IOdontologoService {
 
     public OdontologoSalidaDto buscarOdontologoPorId(Long id) {
         Odontologo odontologoBuscado = odontologoRepository.findById(id).orElse(null);
+
         OdontologoSalidaDto odontologoSalidaDto = null;
-        odontologoSalidaDto = modelMapper.map(odontologoBuscado, OdontologoSalidaDto.class);
-        LOGGER.info("Odontologo encontrado: {}", odontologoSalidaDto);
-        LOGGER.error("El id no se encuentra registrado en la base de datos");
+        if (odontologoBuscado != null) {
+            odontologoSalidaDto = modelMapper.map(odontologoBuscado, OdontologoSalidaDto.class);
+            LOGGER.info("Odontologo encontrado: {}", odontologoSalidaDto);
+        } else LOGGER.error("El id no se encuentra registrado en la base de datos");
 
         return odontologoSalidaDto;
     }
@@ -67,27 +68,31 @@ public class OdontologoService implements IOdontologoService {
     }
 
     @Override
-    public OdontologoSalidaDto actualizarOdontologo(OdontologoModificacionEntradaDto odontologoModificacionEntradaDto) {
-            Odontologo odontologoRecibido = modelMapper.map(odontologoModificacionEntradaDto, Odontologo.class);
-            Odontologo odontologoAActualizar = odontologoRepository.findById(odontologoRecibido.getId()).orElse(null);
-            OdontologoSalidaDto odontologoSalidaDto = null;
+    public OdontologoSalidaDto actualizarOdontologo(OdontologoModificacionEntradaDto odontologoModificacionEntradaDto) throws ResourceNotFoundException {
+        Odontologo odontologoRecibido = modelMapper.map(odontologoModificacionEntradaDto, Odontologo.class);
+        Odontologo odontologoAActualizar = odontologoRepository.findById(odontologoModificacionEntradaDto.getId()).orElse(null);
+        OdontologoSalidaDto odontologoSalidaDto = null;
 
-            if (odontologoAActualizar != null) {
+        if (odontologoAActualizar != null) {
 
-                odontologoAActualizar = odontologoRecibido;
-                odontologoRepository.save(odontologoAActualizar);
+            odontologoAActualizar = odontologoRecibido;
+            odontologoRepository.save(odontologoAActualizar);
 
-                odontologoSalidaDto = modelMapper.map(odontologoAActualizar, OdontologoSalidaDto.class);
+            odontologoSalidaDto = modelMapper.map(odontologoAActualizar, OdontologoSalidaDto.class);
 
-                LOGGER.warn("Odontologo actualizado: {}", odontologoSalidaDto);
+            LOGGER.warn("Odontologo actualizado: {}", odontologoSalidaDto);
 
-            } else LOGGER.error("No fue posible actualizar los datos ya que el odontologo no se encuentra registrado");
+        } else {
+            LOGGER.error("No fue posible actualizar los datos ya que el odontologo no se encuentra registrado");
+            throw new ResourceNotFoundException("No fue posible actualizar los datos ya que el odontologo no se encuentra registrado");
+        }
 
 
-            return odontologoSalidaDto;
+        return odontologoSalidaDto;
     }
 
-    public Odontologo dtoEntradaAEntidad(OdontologoEntradaDto odontologoEntradaDto) {
+    private Odontologo dtoEntradaAEntidad(OdontologoEntradaDto odontologoEntradaDto) {
         return modelMapper.map(odontologoEntradaDto, Odontologo.class);
     }
+
 }

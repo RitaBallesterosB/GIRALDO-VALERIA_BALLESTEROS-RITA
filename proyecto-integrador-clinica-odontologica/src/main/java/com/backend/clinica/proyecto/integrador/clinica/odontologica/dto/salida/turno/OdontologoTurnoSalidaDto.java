@@ -1,5 +1,8 @@
 package com.backend.clinica.proyecto.integrador.clinica.odontologica.dto.salida.turno;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class OdontologoTurnoSalidaDto {
 
 
@@ -38,5 +41,10 @@ public class OdontologoTurnoSalidaDto {
 
     public void setApellido(String apellido) {
         this.apellido = apellido;
+    }
+
+    @Override
+    public String toString() {
+        return "Id: " + id + " - Nombre: " + nombre + " - Apellido: " + apellido;
     }
 }

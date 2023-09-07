@@ -3,20 +3,20 @@ package com.backend.clinica.proyecto.integrador.clinica.odontologica.entity;
 import javax.persistence.*;
 
 @Entity
-@Table (name = "ODONTOLOGOS")
+@Table (name = "ODONTOLOGOS", uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"matricula"})
+})
 
 public class Odontologo {
 
     @Id
-    @GeneratedValue( strategy =
-    GenerationType.IDENTITY)
-
+    @GeneratedValue( strategy = GenerationType.IDENTITY)
     private Long id;
     private String matricula;
     private String nombre;
     private String apellido;
 
-    public Odontologo() {// conversion - serializacion y desearilizaciion OBJETO - JSON
+    public Odontologo() {
     }
 
     public Odontologo(String matricula, String nombre, String apellido) {
@@ -29,8 +29,7 @@ public class Odontologo {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;}
+    public void setId(Long id) { this.id = id;}
 
     public String getMatricula() {
         return matricula;

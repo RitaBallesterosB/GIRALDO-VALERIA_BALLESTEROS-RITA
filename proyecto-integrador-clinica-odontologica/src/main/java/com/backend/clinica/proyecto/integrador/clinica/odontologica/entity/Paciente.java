@@ -4,7 +4,9 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "PACIENTES")
+@Table(name = "PACIENTES", uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"dni"})
+})
 public class Paciente {
 
     @Id
@@ -37,9 +39,7 @@ public class Paciente {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public void setId(Long id) { this.id = id; }
 
     public String getNombre() {
         return nombre;
@@ -81,8 +81,4 @@ public class Paciente {
         this.domicilio = domicilio;
     }
 
-    @Override
-    public String toString() {
-        return "Id: " + id + " - Nombre: " + nombre + " - Apellido: " + apellido + " - DNI: " + dni + " - Fechas de ingreso: " + fechaIngreso + " - Domicilio: " + domicilio;
-    }
 }

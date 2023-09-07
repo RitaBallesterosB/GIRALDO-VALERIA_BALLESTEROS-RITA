@@ -2,24 +2,30 @@ package com.backend.clinica.proyecto.integrador.clinica.odontologica.dto.entrada
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DomicilioModificacionEntradaDto {
 
-    @NotNull
+    @NotNull(message = "Debe proveerse el id del domicilio que se desea modificar")
     private Long id;
 
-    @NotNull
+    @NotNull(message = "La calle no puede ser nula")
+    @NotBlank(message = "Debe especificarse el nombre de la calle")
     private String calle;
 
-    @NotNull
-    private int numero;
+    @NotNull(message = "El numero no puede ser nulo")
+    @Digits(integer = 8, fraction = 0, message = "El número debe tener como máximo 8 dígitos")
+    private Integer numero;
 
-    @NotNull
+    @NotNull(message = "La localidad no puede ser nula")
+    @NotBlank(message = "Debe especificarse la localidad")
     private String localidad;
 
-    @NotNull
+    @NotNull(message = "La provincia no puede ser nula")
+    @NotBlank(message = "Debe especificarse el nombre de la provincia")
     private String provincia;
 
     public DomicilioModificacionEntradaDto() {

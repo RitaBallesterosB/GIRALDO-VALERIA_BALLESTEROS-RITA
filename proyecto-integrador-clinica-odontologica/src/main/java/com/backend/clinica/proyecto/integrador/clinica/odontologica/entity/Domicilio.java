@@ -1,6 +1,5 @@
 package com.backend.clinica.proyecto.integrador.clinica.odontologica.entity;
 
-
 import javax.persistence.*;
 
 @Entity
@@ -14,11 +13,8 @@ public class Domicilio {
     private String localidad;
     private String provincia;
 
-
     public Domicilio() {
     }
-
-
 
     public Domicilio(String calle, int numero, String localidad, String provincia) {
         this.calle = calle;
@@ -30,10 +26,7 @@ public class Domicilio {
     public Long getId() {
         return id;
     }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public void setId(Long id) { this.id = id; }
 
     public String getCalle() {
         return calle;
@@ -67,8 +60,4 @@ public class Domicilio {
         this.provincia = provincia;
     }
 
-    @Override
-    public String toString() {
-        return "Id: " + id + " - Calle: " + calle + " - Numero: " + numero + " - Localidad: " + localidad + " - Provincia: " + provincia;
-    }
 }

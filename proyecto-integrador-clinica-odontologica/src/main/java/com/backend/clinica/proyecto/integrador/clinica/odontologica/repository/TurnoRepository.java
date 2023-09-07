@@ -14,12 +14,10 @@ import java.util.List;
 
 public interface TurnoRepository extends JpaRepository<Turno, Long> {
 
-    /*@Query("Select t from TURNOS t join t.paciente p where p.apellido = ?1")
+    @Query("SELECT t FROM Turno t JOIN t.paciente p WHERE p.apellido = ?1")
     List<Turno> listarTurnosPorApellidoPaciente(String apellido);
 
     @Query(value = "SELECT * FROM TURNOS JOIN ODONTOLOGOS ON TURNOS.ODONTOLOGO_ID = ODONTOLOGOS.ID WHERE ODONTOLOGOS.APELLIDO = ?1", nativeQuery = true)
     List<Turno> listarTurnosPorApellidoOdontologo(String apellido);
-
-    // crud = registrar, actualizar, buscar por Id, listarTodoslosTurnos*/
 
 }

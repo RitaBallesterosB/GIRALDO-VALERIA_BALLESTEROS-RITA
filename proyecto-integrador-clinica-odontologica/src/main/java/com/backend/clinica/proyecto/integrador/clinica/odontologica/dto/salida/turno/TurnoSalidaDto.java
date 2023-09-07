@@ -1,11 +1,15 @@
 package com.backend.clinica.proyecto.integrador.clinica.odontologica.dto.salida.turno;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.time.LocalDateTime;
 
 public class TurnoSalidaDto {
     private Long id;
     private PacienteTurnoSalidaDto pacienteTurnoSalidaDto;
     private OdontologoTurnoSalidaDto odontologoTurnoSalidaDto;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm")
     private LocalDateTime fechaYHora;
 
     public TurnoSalidaDto() {
@@ -48,5 +52,10 @@ public class TurnoSalidaDto {
 
     public void setFechaYHora(LocalDateTime fechaYHora) {
         this.fechaYHora = fechaYHora;
+    }
+
+    @Override
+    public String toString() {
+        return "Id: " + id + " - Paciente: " + pacienteTurnoSalidaDto + " - Odontologo: " + odontologoTurnoSalidaDto + " - Fecha y hora: " + fechaYHora;
     }
 }
