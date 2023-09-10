@@ -1,0 +1,131 @@
+/* Estilo general */
+body {
+    font-family: Verdana, sans-serif;
+    font-size: 12px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: #2c7597;
+}
+h1 {
+    text-align: center; /* Centra el texto horizontalmente */
+}
+
+/* Estilo para el menú principal */
+.navbar {
+    background-color: #2798ee;
+}
+.nav-link {
+    font-size: 20px;
+    color: #13bd46; 
+}
+
+.navbar {
+    height: 140px; 
+}
+.navbar-nav .nav-link {
+    color: #e6c395;
+    font-size: 14px;
+}
+
+/* Centrar la barra de navegación */
+.navbar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* Distribuir los elementos de menú equidistantemente */
+.navbar-nav {
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+/* Estilo para los elementos de menú */
+.nav-item {
+    margin-right: 10px; /* Espaciado entre elementos de menú */
+}
+
+/* Estilo para los dropdown */
+.dropdown-menu {
+    background-color: #5ba0d4;
+}
+
+.dropdown-item {
+    color: #0c1db4;
+    font-size: 12px;
+}
+
+/* Estilo para los formularios */
+.form-container {
+    text-align: center;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="date"] {
+    background-color: #59c7fa;
+    color: #0adae9;
+    font-size: 12px;
+    max-width: 250px;
+}
+
+.form-container {
+    text-align: center; /* Alinea el contenido al centro horizontal */
+    display: flex; /* Utiliza flexbox para centrar verticalmente */
+    justify-content: space-around; /* Centra horizontalmente */
+    align-items: left; /* Centra verticalmente */
+    height: 100vh; /* Establece la altura del contenedor al 100% del alto de la ventana */
+}
+.form-container1 {
+    text-align: center; /* Alinea el contenido al centro horizontal */
+   
+    
+}
+
+.form-group1 {
+    margin: 0 auto; /* Margen automático en los lados izquierdo y derecho */
+    padding: 30px;
+    padding-bottom: 30px;
+    max-width: 400px; /* Ancho máximo del formulario */
+    border: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="date"] {
+    width: 100%; /* Para que todos los campos tengan el mismo ancho */
+    text-align: left; /* Para alinear el texto a la izquierda */
+}
+
+
+
+
+
+
+/* Estilo para los botones */
+.btn {
+    background-color: #0d7fdd;
+    color: white;
+}
+
+/* Estilo para los estados de los botones */
+.btn:hover {
+    background-color: #15697e;
+    color: white;
+}
+
+.btn:active {
+    background-color: #B79BEB;
+    color: white;
+}
+
+.custom-btn {
+   
+  
+    margin-top: 30px;
+}
