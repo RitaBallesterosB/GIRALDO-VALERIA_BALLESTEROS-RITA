@@ -3,14 +3,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const table = document.querySelector("table");
     const tbody = table.querySelector("tbody");
 
-    // Realizar una solicitud AJAX para obtener la lista de odontólogos
-    fetch("ruta/al/endpoint/que/devuelve/odontologos")
+    const url = '/odontologos';
+          const settings = {
+            method: 'GET'
+          }
+
+    // Realizar una solicitud  para obtener la lista de odontólogos
+    fetch(url,settings)
         .then(response => response.json())
         .then(data => {
             // Llenar la tabla con los datos de los odontólogos
             data.forEach(odontologo => {
                 const row = document.createElement("tr");
                 row.innerHTML = `
+                    <td>${odontologo.id}</td>
                     <td>${odontologo.matricula}</td>
                     <td>${odontologo.nombre}</td>
                     <td>${odontologo.apellido}</td>
@@ -35,8 +41,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Función para eliminar un odontólogo
     function eliminarOdontologo(id) {
-        // Realizar una solicitud AJAX DELETE para eliminar el odontólogo por su ID
-        fetch(`ruta/al/endpoint/eliminar-odontologo/${id}`, {
+        // Realizar una solicitud DELETE para eliminar el odontólogo
+        fetch(`odontologos/eliminar/${id}`, {
             method: "DELETE"
         })
         .then(response => {

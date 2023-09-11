@@ -33,7 +33,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="odontologosDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Gestionar
+                            Gestionar ODONTÓLOGO
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="odontologosDropdown">
                             <li><a class="dropdown-item" href="registrar-odontologo.html">Registrar Odontólogo</a></li>
@@ -62,11 +62,11 @@
 
                 <!-- Menú para gestionar Turnos -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="pacientesDropdown" role="button"
+                    <a class="nav-link dropdown-toggle" href="#" id="turnosDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Gestionar TURNOS
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="pacienteDropdown">
+                    <ul class="dropdown-menu" aria-labelledby="turnosDropdown">
                         <li><a class="dropdown-item" href="registrar-turno.html">Registrar Turno</a></li>
                         <li><a class="dropdown-item" href="modificar-turno.html">Modificar Turno</a></li>
                         <li><a class="dropdown-item" href="listar-turno.html">Listar Todos Los Turnos</a></li>
@@ -84,7 +84,7 @@
     <!-- Agrega tu contenido HTML para el registro de odontólogos aquí -->
     <h1>Registrar Odontólogo </h1>
     <div class="form-container">
-        <form>
+        <form id="registroOdontologoForm">
             <!-- Campos del formulario para registrar odontólogo -->
             <div class="form-group">
                 <label for="matricula">Matrícula:</label>
@@ -99,11 +99,10 @@
                 <input type="text" id="apellido" name="apellido" required>
             </div>
             <!-- Botón para enviar el formulario -->
-            <button type="submit">Registrar</button>
+            <button type="submit" class="btn btn-primary">Registrar</button>
         </form>
     </div>
 
-    <!-- Agrega enlaces a tus archivos CSS y JavaScript correspondientes -->
     <script src="js/registrar_odontologo.js"></script>
 </body>
 

@@ -62,11 +62,11 @@
 
                 <!-- Menú para gestionar Turnos -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="pacientesDropdown" role="button"
+                    <a class="nav-link dropdown-toggle" href="#" id="turnoDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Gestionar TURNOS
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="pacienteDropdown">
+                    <ul class="dropdown-menu" aria-labelledby="turnoDropdown">
                         <li><a class="dropdown-item" href="registrar-turno.html">Registrar Turno</a></li>
                         <li><a class="dropdown-item" href="modificar-turno.html">Modificar Turno</a></li>
                         <li><a class="dropdown-item" href="listar-turno.html">Listar Todos Los Turnos</a></li>
@@ -82,9 +82,10 @@
 
     <div class="container mt-4">
         <h1>Listado de Odontólogos</h1>
-        <table class="table table-striped">
+        <table id="odontologoTabla" class="table table-striped">
             <thead>
                 <tr>
+                    <td>Id</td>
                     <th>Matrícula</th>
                     <th>Nombre</th>
                     <th>Apellido</th>

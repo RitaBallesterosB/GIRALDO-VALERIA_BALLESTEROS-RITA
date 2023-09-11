@@ -1,31 +1,39 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const buscarOdontologoForm = document.getElementById('buscarOdontologoForm');
-    const odontologoResultado = document.getElementById('odontologoResultado');
+    const buscarOdontologo = document.querySelector('#buscarOdontologoForm');
+    const odontologoResultado = document.querySelector('#odontologoResultado');
 
-    buscarOdontologoForm.addEventListener('submit', function (event) {
+    buscarOdontologo.addEventListener('submit', function (event) {
         event.preventDefault();
 
-        const odontologoId = document.getElementById('odontologoId').value;
+        const odontologoId = document.getElementById('id').value;
 
-        // Realizar una solicitud AJAX para buscar el Odontólogo por ID
-        fetch(`/ruta_del_endpoint/${odontologoId}`)
+         const url = `/odontologos/${odontologoId}`;
+         const settings = {
+                    method: 'GET',
+                    headers: {
+                    'Content-Type': 'application/json'
+                    }
+                  }
+
+        // Realizar una solicitud para buscar el Odontólogo por ID
+        fetch(url,settings)
             .then(response => response.json())
             .then(data => {
-                if (data) {
-                    // Mostrar la información del Odontólogo encontrado
+             
+            document.querySelector('#odontologoResultado').style.display = "block";
                     odontologoResultado.innerHTML = `
-                        <h2>Información del Odontólogo</h2>
+                        <h6>Información del Odontólogo</h6>
                         <p>ID: ${data.id}</p>
                         <p>Matrícula: ${data.matricula}</p>
                         <p>Nombre: ${data.nombre}</p>
                         <p>Apellido: ${data.apellido}</p>
-                        <!-- Agrega aquí otros campos de información si es necesario -->
                     `;
-                } else {
-                    // Mostrar un mensaje si no se encuentra el Odontólogo
-                    odontologoResultado.innerHTML = '<p>Odontólogo no encontrado.</p>';
-                }
+          
+              
             })
-            .catch(error => console.error('Error:', error));
+            .catch(error => {
+             document.querySelector('#odontologoResultado').style.display = "block";
+                         odontologoResultado.innerHTML = "<p>Odontólogo no encontrado.</p>"
+            });
     });
 });
