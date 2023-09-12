@@ -15,6 +15,7 @@ h1 {
     text-align: center; /* Centra el texto horizontalmente */
 }
 
+
 /* Estilo para el menú principal */
 .navbar {
     background-color: #0b314e;
@@ -35,14 +36,15 @@ h1 {
 /* Centrar la barra de navegación */
 .navbar {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 /* Distribuir los elementos de menú equidistantemente */
 .navbar-nav {
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     width: 100%;
 }
 
@@ -183,6 +185,17 @@ h1 {
  padding:30px;
 }
 
+#odontologoRegistrado{
+ display: block;
+ max-width: 800px;
+ background-color:#cde8f5;
+ border-radius: 10px;
+ font-family: Verdana, sans-serif;
+ font-size: 12px;
+ color: #040b2c;
+ padding:30px;
+}
+
 
 #response{
     display: block;
@@ -195,8 +208,7 @@ h1 {
      padding:30px;
    }
 
-   #div_odontologo_updating {
-   {
+#div_odontologo_updating {
        display: block;
         max-width: 800px;
         background-color:#cde8f5;
@@ -205,5 +217,4 @@ h1 {
         font-size: 12px;
         color: #040b2c;
         padding:30px;
-      }
    }

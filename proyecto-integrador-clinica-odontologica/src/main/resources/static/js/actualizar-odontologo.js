@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
               .then(response => response.json())
               .then(data => {
               let odontologo = data;
-                            document.querySelector('#odontologo_id').value = odontologo.odontologo_idid;
+                            document.querySelector('#odontologo_id').value = odontologo.odontologo_id;
                             document.querySelector('#matricula').value = odontologo.matricula;
                             document.querySelector('#nombre').value = odontologo.nombre;
                             document.querySelector('#apellido').value = odontologo.apellidos;
