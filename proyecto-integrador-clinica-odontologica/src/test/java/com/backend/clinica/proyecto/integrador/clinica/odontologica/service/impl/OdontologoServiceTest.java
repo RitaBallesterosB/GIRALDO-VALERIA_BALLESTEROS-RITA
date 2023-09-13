@@ -24,8 +24,8 @@ class OdontologoServiceTest {
 
     @Test
     @Order(1)
-    void deberiaInsertarUnOdontologoDeNombreDavid(){
-        OdontologoEntradaDto odontologoEntradaDto = new OdontologoEntradaDto("AB-1234567","David", "Gutierrez");
+    void deberiaInsertarUnOdontologoDeNombreDavid() {
+        OdontologoEntradaDto odontologoEntradaDto = new OdontologoEntradaDto("AB-1234567", "David", "Gutierrez");
 
         OdontologoSalidaDto odontologoSalidaDto = odontologoService.registrarOdontologo(odontologoEntradaDto);
 
@@ -35,13 +35,13 @@ class OdontologoServiceTest {
 
     @Test
     @Order(2)
-    void deberiaRetornarseUnaListaNoVaciaDeOdontologos(){
+    void deberiaRetornarseUnaListaNoVaciaDeOdontologos() {
         assertTrue(odontologoService.listarOdontologos().size() > 0);
     }
 
 
     @Test
-    void alIntentarActualizarElOdontologoId2_deberiaLanzarseUnaResourceNotFoundException(){
+    void alIntentarActualizarElOdontologoId2_deberiaLanzarseUnaResourceNotFoundException() {
         OdontologoModificacionEntradaDto odontologoModificacionEntradaDto = new OdontologoModificacionEntradaDto();
         odontologoModificacionEntradaDto.setId(2L);
         assertThrows(ResourceNotFoundException.class, () -> odontologoService.actualizarOdontologo(odontologoModificacionEntradaDto));
@@ -49,16 +49,14 @@ class OdontologoServiceTest {
 
     @Test
     @Order(3)
-    void alIntentarEliminarUnOdontologoYaEliminado_deberiaLanzarseUnResourceNotFoundException(){
-        try{
+    void alIntentarEliminarUnOdontologoYaEliminado_deberiaLanzarseUnResourceNotFoundException() {
+        try {
             odontologoService.eliminarOdontologo(1L);
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         assertThrows(ResourceNotFoundException.class, () -> odontologoService.eliminarOdontologo(1L));
     }
-
-
 
 
 }

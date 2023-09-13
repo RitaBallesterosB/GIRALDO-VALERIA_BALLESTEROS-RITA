@@ -1,7 +1,7 @@
 window.addEventListener('load', function () {
 
     //Al cargar la pagina buscamos y obtenemos el formulario donde estarán
-    //los datos que el usuario cargará de la nueva pelicula
+    //los datos que el usuario cargará del nuevo odontologo
     const formulario = document.getElementById('registroOdontologoForm');
     const odontologoRegistrado = document.querySelector('#odontologoRegistrado');
 
@@ -16,7 +16,7 @@ window.addEventListener('load', function () {
             apellido: document.querySelector('#apellido').value,
 
         };
-        //invocamos utilizando la función fetch la API peliculas con el método POST que guardará
+        //invocamos utilizando la función fetch la API  con el método POST que guardará
         //odontólogo que enviaremos en formato JSON
         const url = 'odontologos/registrar';
         const settings = {

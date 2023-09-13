@@ -3,129 +3,133 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Modificar Odontólogo</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="css/tu-estilo.css">
+    <link href="css/tu-estilo.css" rel="stylesheet">
 </head>
 
 <body>
 
 
-    <!-- Barra de navegación -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <a href="index.html">  <img src="assets/logo.png" alt="Logo de la Clínica" width="180" height="70"></a>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ml-auto">
+<!-- Barra de navegación -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <a href="index.html"> <img alt="Logo de la Clínica" height="70" src="assets/logo.png" width="180"></a>
+        </a>
+        <button aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler"
+                data-target="#navbarNavDropdown" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
 
-                    <!-- Menú para gestionar Odontólogos -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="odontologosDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Gestionar ODONTÓLOGO
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="odontologosDropdown">
-                            <li><a class="dropdown-item" href="registrar-odontologo.html">Registrar Odontólogo</a></li>
-                            <li><a class="dropdown-item" href="modificar-odontologo.html">Modificar Odontólogo</a></li>
-                            <li><a class="dropdown-item" href="listar-odontologos.html">Listar Todos Los Odontólogos</a>
-                            </li>
-                            <li><a class="dropdown-item" href="buscar-odontologo.html">Buscar Odontólogo</a></li>
-                           
-                        </ul>
-                    </li>
+                <!-- Menú para gestionar Odontólogos -->
+                <li class="nav-item dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle"
+                       data-toggle="dropdown"
+                       href="#" id="odontologosDropdown" role="button">
+                        Gestionar ODONTÓLOGO
+                    </a>
+                    <ul aria-labelledby="odontologosDropdown" class="dropdown-menu">
+                        <li><a class="dropdown-item" href="registrar-odontologo.html">Registrar Odontólogo</a></li>
+                        <li><a class="dropdown-item" href="modificar-odontologo.html">Modificar Odontólogo</a></li>
+                        <li><a class="dropdown-item" href="listar-odontologos.html">Listar Todos Los Odontólogos</a>
+                        </li>
+                        <li><a class="dropdown-item" href="buscar-odontologo.html">Buscar Odontólogo</a></li>
+
+                    </ul>
+                </li>
 
                 <!-- Menú para gestionar Pacientes -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="pacientesDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle"
+                       data-toggle="dropdown"
+                       href="#" id="pacientesDropdown" role="button">
                         Gestionar PACIENTES
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="pacienteDropdown">
+                    <ul aria-labelledby="pacienteDropdown" class="dropdown-menu">
                         <li><a class="dropdown-item" href="registrar-paciente.html">Registrar Paciente</a></li>
                         <li><a class="dropdown-item" href="modificar-paciente.html">Modificar Paciente</a></li>
                         <li><a class="dropdown-item" href="listar-pacientes.html">Listar Todos Los Pacientes</a></li>
                         <li><a class="dropdown-item" href="buscar-paciente.html">Buscar Paciente</a></li>
-                      
+
                     </ul>
                 </li>
 
                 <!-- Menú para gestionar Turnos -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="turnoDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle"
+                       data-toggle="dropdown"
+                       href="#" id="turnoDropdown" role="button">
                         Gestionar TURNOS
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="turnoDropdown">
-                        <li><a class="dropdown-item" href="registrar-turno.html">Registrar Turno</a></li>
-                        <li><a class="dropdown-item" href="modificar-turno.html">Modificar Turno</a></li>
-                        <li><a class="dropdown-item" href="listar-turno.html">Listar Todos Los Turnos</a></li>
-                        <li><a class="dropdown-item" href="buscar-turno.html">Buscar Turno</a></li>
+                    <ul aria-labelledby="turnoDropdown" class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Registrar Turno</a></li>
+                        <li><a class="dropdown-item" href="#">Modificar Turno</a></li>
+                        <li><a class="dropdown-item" href="#">Listar Todos Los Turnos</a></li>
+                        <li><a class="dropdown-item" href="#">Buscar Turno</a></li>
                     </ul>
                 </li>
 
-                </ul>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container mt-4">
+    id="div_odontologo_updating">
+    <h1>Modificar Odontólogo</h1>
+    <form id="formulario-modificar-odontologo">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="odontologo_id">Odontólogo ID:</label>
+                    <input class="form-control" id="odontologo_id" name="odontologo_id" placeholder="Ingrese el id"
+                           type="text">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="matricula">Matrícula:</label>
+                    <input class="form-control" id="matricula" name="matricula" placeholder="Ingrese la matrícula"
+                           type="text">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input class="form-control" id="nombre" name="nombre" placeholder="Ingrese el nombre" type="text">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="apellido">Apellido:</label>
+                    <input class="form-control" id="apellido" name="apellido" placeholder="Ingrese el apellido"
+                           type="text">
+                </div>
             </div>
         </div>
-    </nav>
-     
+        <div class="text-center custom-btn">
+            <button class="btn btn-primary" type="submit">Modificar</button>
+        </div>
+    </form>
 
+    <!-- Aquí debe cargar el odontólogo MODIFICADO -->
 
-    <div class="container mt-4">
-        id="div_odontologo_updating">
-        <h1>Modificar Odontólogo</h1>
-        <form id="formulario-modificar-odontologo">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="form-group">
-                        <label for="odontologo_id">Odontólogo ID:</label>
-                        <input type="text" class="form-control" id="odontologo_id" name="odontologo_id" placeholder="Ingrese el id">
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-group">
-                        <label for="matricula">Matrícula:</label>
-                        <input type="text" class="form-control" id="matricula" name="matricula" placeholder="Ingrese la matrícula">
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-group">
-                        <label for="nombre">Nombre:</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese el nombre">
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-group">
-                        <label for="apellido">Apellido:</label>
-                        <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Ingrese el apellido">
-                    </div>
-                </div>
-            </div>
-            <div class="text-center custom-btn">
-                <button type="submit" class="btn btn-primary">Modificar</button>
-            </div>
-        </form>
-
-          <!-- Aquí debe cargar el odontólogo MODIFICADO -->
-
-        <div id="response" style="display:none; margin:10px">
+    <div id="response" style="display:none; margin:10px">
     </div>
-    
 
 
-
-  
     <script src="js/actualizar-odontologo.js"></script>
+
 </body>
 
 </html>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Listar Odontólogo</title>
+    <title>Modificar Paciente</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -83,28 +83,89 @@
     </div>
 </nav>
 
+
 <div class="container mt-4">
-    <h1>Listado de Odontólogos</h1>
-    <table class="table table-striped" id="odontologoTabla">
-        <thead>
-        <tr>
-            <td>Id</td>
-            <th>Matrícula</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Acciones</th>
+    <h1>Modificar Paciente</h1>
+    <form id="formulario-modificar-paciente">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="paciente_id">Paciente ID:</label>
+                    <input class="form-control" id="paciente_id" name="paciente_id" placeholder="Ingrese el id" type="text">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input class="form-control" id="nombre" name="nombre" placeholder="Ingrese el nombre" type="text">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="apellido">Apellido:</label>
+                    <input class="form-control" id="apellido" name="apellido" placeholder="Ingrese el apellido"
+                           type="text">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="dni">Dni:</label>
+                    <input class="form-control" id="dni" name="dni" placeholder="Ingrese el Dni"
+                           type="text">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="fechaIngreso">Fecha de ingreso:</label>
+                    <input class="form-control" id="fechaIngreso" name="fechaIngreso"
+                           placeholder="Ingrese la fecha de ingreso" type="text">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="domicilio_id">Domicilio ID:</label>
+                    <input class="form-control" id="domicilio_id" name="domicilio_id" placeholder="Ingrese el id" type="text">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="calle">Calle:</label>
+                    <input class="form-control" id="calle" name="calle" placeholder="Ingrese la calle" type="text">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="numero">Número:</label>
+                    <input id="numero" name="numero" placeholder="Ingrese el número" required type="text">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="localidad">Localidad:</label>
+                    <input id="localidad" name="localidad" placeholder="Ingrese la localidad" required type="text">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="provincia">Provincia:</label>
+                    <input id="provincia" name="provincia" placeholder="Ingrese la provincia" required type="text">
+                </div>
+            </div>
 
-        </tr>
-        </thead>
-        <tbody>
-        <!-- Aquí se mostrarán los datos de los odontólogos -->
+        </div>
+        <div class="text-center custom-btn">
+            <button class="btn btn-primary" type="submit">Modificar</button>
+        </div>
+    </form>
 
-        </tbody>
-    </table>
-</div>
+    <!-- Aquí debe cargar el paciente MODIFICADO -->
+
+    <div id="response" style="display:none; margin:10px">
+    </div>
 
 
-<script src="js/listar_odontologos.js"></script>
+    <script src="js/actualizar_paciente.js"></script>
+
 </body>
 
 </html>

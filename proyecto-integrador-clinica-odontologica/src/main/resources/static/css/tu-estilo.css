@@ -185,7 +185,29 @@ h1 {
  padding:30px;
 }
 
+#pacienteResultado{
+ display: block;
+ max-width: 800px;
+ background-color:#cde8f5;
+ border-radius: 10px;
+ font-family: Verdana, sans-serif;
+ font-size: 12px;
+ color: #040b2c;
+ padding:30px;
+}
+
 #odontologoRegistrado{
+ display: block;
+ max-width: 800px;
+ background-color:#cde8f5;
+ border-radius: 10px;
+ font-family: Verdana, sans-serif;
+ font-size: 12px;
+ color: #040b2c;
+ padding:30px;
+}
+
+#pacienteRegistrado{
  display: block;
  max-width: 800px;
  background-color:#cde8f5;

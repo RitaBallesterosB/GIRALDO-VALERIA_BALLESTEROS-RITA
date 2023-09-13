@@ -6,27 +6,24 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.sql.SQLException;
 
 @SpringBootApplication
 public class ProyectoIntegradorClinicaOdontologicaApplication {
-	private static final Logger LOGGER = LoggerFactory.getLogger(ProyectoIntegradorClinicaOdontologicaApplication.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ProyectoIntegradorClinicaOdontologicaApplication.class);
 
-	public static void main(String[] args) throws SQLException, ClassNotFoundException {
-		SpringApplication.run(ProyectoIntegradorClinicaOdontologicaApplication.class, args);
+    public static void main(String[] args) throws SQLException, ClassNotFoundException {
+        SpringApplication.run(ProyectoIntegradorClinicaOdontologicaApplication.class, args);
 
-		LOGGER.info("ProyectoIntegradorClinicaOdontologica is now running...");
+        LOGGER.info("ProyectoIntegradorClinicaOdontologica is now running...");
 
-	}
-	@Bean
-	public ModelMapper modelMapper(){
-		return new ModelMapper();
-	}
+    }
 
+    @Bean
+    public ModelMapper modelMapper() {
+        return new ModelMapper();
+    }
 
 
 }

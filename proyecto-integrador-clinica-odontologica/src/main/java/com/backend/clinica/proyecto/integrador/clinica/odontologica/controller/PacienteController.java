@@ -3,7 +3,6 @@ package com.backend.clinica.proyecto.integrador.clinica.odontologica.controller;
 
 import com.backend.clinica.proyecto.integrador.clinica.odontologica.dto.entrada.modificacion.PacienteModificacionEntradaDto;
 import com.backend.clinica.proyecto.integrador.clinica.odontologica.dto.entrada.paciente.PacienteEntradaDto;
-import com.backend.clinica.proyecto.integrador.clinica.odontologica.dto.salida.odontologo.OdontologoSalidaDto;
 import com.backend.clinica.proyecto.integrador.clinica.odontologica.dto.salida.paciente.PacienteSalidaDto;
 import com.backend.clinica.proyecto.integrador.clinica.odontologica.exceptions.ResourceNotFoundException;
 import com.backend.clinica.proyecto.integrador.clinica.odontologica.service.IPacienteService;
@@ -78,7 +77,7 @@ public class PacienteController {
                     content = @Content)
     })
     @GetMapping("{id}")
-    public ResponseEntity<PacienteSalidaDto> obtenerPacientePorId(@PathVariable Long id){
+    public ResponseEntity<PacienteSalidaDto> obtenerPacientePorId(@PathVariable Long id) {
         return new ResponseEntity<>(pacienteService.buscarPacientePorId(id), HttpStatus.OK);
     }
 
@@ -93,7 +92,7 @@ public class PacienteController {
                     content = @Content)
     })
     @GetMapping()
-    public ResponseEntity<List<PacienteSalidaDto>> listarPacientes(){
+    public ResponseEntity<List<PacienteSalidaDto>> listarPacientes() {
         return new ResponseEntity<>(pacienteService.listarPacientes(), HttpStatus.OK);
     }
 

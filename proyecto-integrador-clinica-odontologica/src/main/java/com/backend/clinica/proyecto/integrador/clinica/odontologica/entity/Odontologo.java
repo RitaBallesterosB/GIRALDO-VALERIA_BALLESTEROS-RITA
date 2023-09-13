@@ -3,14 +3,14 @@ package com.backend.clinica.proyecto.integrador.clinica.odontologica.entity;
 import javax.persistence.*;
 
 @Entity
-@Table (name = "ODONTOLOGOS", uniqueConstraints = {
+@Table(name = "ODONTOLOGOS", uniqueConstraints = {
         @UniqueConstraint(columnNames = {"matricula"})
 })
 
 public class Odontologo {
 
     @Id
-    @GeneratedValue( strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String matricula;
     private String nombre;
@@ -29,7 +29,9 @@ public class Odontologo {
         return id;
     }
 
-    public void setId(Long id) { this.id = id;}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getMatricula() {
         return matricula;

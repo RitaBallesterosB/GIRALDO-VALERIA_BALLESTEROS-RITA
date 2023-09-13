@@ -2,7 +2,6 @@ package com.backend.clinica.proyecto.integrador.clinica.odontologica.controller;
 
 import com.backend.clinica.proyecto.integrador.clinica.odontologica.dto.entrada.modificacion.TurnoModificacionEntradaDto;
 import com.backend.clinica.proyecto.integrador.clinica.odontologica.dto.entrada.turno.TurnoEntradaDto;
-import com.backend.clinica.proyecto.integrador.clinica.odontologica.dto.salida.paciente.PacienteSalidaDto;
 import com.backend.clinica.proyecto.integrador.clinica.odontologica.dto.salida.turno.TurnoSalidaDto;
 import com.backend.clinica.proyecto.integrador.clinica.odontologica.exceptions.BadRequestException;
 import com.backend.clinica.proyecto.integrador.clinica.odontologica.exceptions.ResourceNotFoundException;
@@ -80,7 +79,7 @@ public class TurnoController {
                     content = @Content)
     })
     @GetMapping("{id}")
-    public ResponseEntity<TurnoSalidaDto> obtenerTurnoPorId(@PathVariable Long id){
+    public ResponseEntity<TurnoSalidaDto> obtenerTurnoPorId(@PathVariable Long id) {
         return new ResponseEntity<>(turnoService.buscarTurnoPorId(id), HttpStatus.OK);
     }
 
@@ -95,7 +94,7 @@ public class TurnoController {
                     content = @Content)
     })
     @GetMapping()
-    public ResponseEntity<List<TurnoSalidaDto>> listarTurnos(){
+    public ResponseEntity<List<TurnoSalidaDto>> listarTurnos() {
         return new ResponseEntity<>(turnoService.listarTurnos(), HttpStatus.OK);
     }
 
