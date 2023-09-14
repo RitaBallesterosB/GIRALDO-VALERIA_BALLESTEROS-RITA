@@ -3,7 +3,7 @@ window.addEventListener('load', function () {
     //Al cargar la pagina buscamos y obtenemos el formulario donde estarán
     //los datos que el usuario cargará del nuevo paciente
     const formulario = document.getElementById('registroPacienteForm');
-    const pacienteRegistrado = document.querySelector('#pacienteRegistrado');
+    const pacienteRegistrado = document.getElementById('pacienteRegistrado');
 
     //Ante un submit del formulario se ejecutará la siguiente funcion
     formulario.addEventListener('submit', function (event) {
@@ -34,7 +34,11 @@ window.addEventListener('load', function () {
         }
 
         fetch(url, settings)
-            .then(response => response.json())
+            .then(response => {
+                  if (!response.ok){
+                        throw new Error ('Error en la solicitud'); }
+                         return response.json();
+                                          })
             .then(data => {
                  //Si no hay ningun error se muestra un mensaje diciendo que
                  //se agrego bien

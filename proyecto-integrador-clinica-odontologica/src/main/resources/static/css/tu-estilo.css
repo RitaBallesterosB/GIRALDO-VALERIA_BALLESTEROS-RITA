@@ -11,10 +11,16 @@ h1 {
     margin-bottom: 50px;
     color: #2c7597;
 }
+
 h1 {
     text-align: center; /* Centra el texto horizontalmente */
 }
 
+.logo {
+    width: 400px;
+    height: 100;
+    padding-right: 20px;
+}
 
 /* Estilo para el menú principal */
 .navbar {
@@ -22,11 +28,11 @@ h1 {
 }
 .nav-link {
     font-size: 20px;
-    color: #bd3513; 
+    color: #bd3513;
 }
 
 .navbar {
-    height: 140px; 
+    height: 140px;
 }
 .navbar-nav .nav-link {
     color: #0e2174;
@@ -36,7 +42,7 @@ h1 {
 /* Centrar la barra de navegación */
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
 }
@@ -44,7 +50,7 @@ h1 {
 /* Distribuir los elementos de menú equidistantemente */
 .navbar-nav {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
 }
 
@@ -63,11 +69,6 @@ h1 {
     font-size: 12px;
 }
 
-/* Estilo para los formularios */
-.form-container {
-    text-align: center;
-}
-
 .form-group input[type="text"],
 .form-group input[type="number"],
 .form-group input[type="date"] {
@@ -75,7 +76,7 @@ h1 {
     color: #3b3b3b;
     font-size: 12px;
     max-width: 250px;
-    
+
 }
 .form-group label {
     color: #2c7597;
@@ -89,32 +90,57 @@ h1 {
 
 }
 
-
+ /* estilo contenedor fomrularios */
 .form-container {
-    text-align: center; /* Alinea el contenido al centro horizontal */
+    text-align: center;
     display: flex; /* Utiliza flexbox para centrar verticalmente */
     justify-content: space-around; /* Centra horizontalmente */
     align-items: left; /* Centra verticalmente */
-  
+
 }
+
 .form-container1 {
-    
-    text-align: center; /* Alinea el contenido al centro horizontal */ 
-    width: 500px;    
+
+    text-align: center;
+    width: 500px;
+
+    background-size: cover;
+    background-position:content center ;
+    height: 300px;
+
+    z-index: -2;
+    margin: auto;
 }
+
+
 
 
 /* Estilo para los campos del formulario */
 #formulario-modificar-odontologo .form-group {
     flex: 1;
     margin-right: 10px;
+    width: 100%;
+    max-width: none;
 }
 
-/* Estilo para los campos de entrada */
-#formulario-modificar-odontologo .form-control {
+
+
+#registroOdontologoForm .form-control {
+    flex: 1;
+    margin:auto;
     width: 100%;
     max-width: none; /* Elimina la limitación de ancho máximo */
 }
+
+#registroPacienteForm  {
+    flex: 1; /* Aquí está el cuerpo del formulario registrar paciente */
+    margin-left:200px;
+    width: 25vh;
+    max-width: none; /* Elimina la limitación de ancho máximo */
+    background-color: #ffffff;
+    margin-top: -20px;
+}
+
 
 /* Estilo para el botón del formulario */
 #formulario-modificar-odontologo .custom-btn {
@@ -124,12 +150,26 @@ h1 {
 
 
 .form-group1 {
-    margin: 0 auto; /* Margen automático en los lados izquierdo y derecho */
+    margin: 0 auto;
     padding-top: 10px;
     padding-bottom: 30px;
-    max-width: 200px; /* Ancho máximo del formulario */
+    max-width: 250px; /* Ancho máximo del formulario */
     border: 5px;
 }
+
+.form-group2 {
+    flex: 0 0 calc(33.33% - 10px); /* Ancho del 33.33% para tres campos por fila */
+    margin-right: 10px; /* Espaciado entre los campos */
+}
+
+.row2 {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+
+}
+
+
 
 .form-group1 label {
     color: #2c7597;
@@ -141,7 +181,43 @@ h1 {
 .form-group input[type="date"] {
     width: 100%; /* Para que todos los campos tengan el mismo ancho */
     text-align: left; /* Para alinear el texto a la izquierda */
+
+
 }
+
+.form-group2{
+    display: flex;
+    flex-direction: row;
+    align-items:flex-end;
+    margin-bottom: 10px;
+    max-width: 45vw; /* Ancho máximo del formulario */
+
+
+}
+
+.form-group2 label {
+    flex: 1;
+    text-align: right;
+    margin-right: 10px;
+    color: #2c7597;
+    font-size: 13px;
+}
+
+
+.form-group2 input[type="text"],
+.form-group2 input[type="number"],
+.form-group2 input[type="date"] {
+
+    flex:2;
+    background-color: #b0d7e9;
+    color: #818181;
+    font-size: 13px;
+    width: 100%;
+    border: none;
+    height: 35px;
+    border-radius: 5px;
+}
+
 
 
 
@@ -163,32 +239,43 @@ h1 {
 }
 
 .custom-btn {
-   
+
     margin-top: 30px;
 }
 .btn01 {
     background-color: #596fd3;
     color: #fffcfc;
     border-color: #8e94ca;
-    
-    
+
+}
+
+.btn1  {
+    background-color: #0d7fdd;
+    width: 160px;
+    font-size: 18px;
+    height: 45px;
+    margin-left:20%;
+    margin-right: 50%;
+    border-radius: 5px;
+    align-items:flex-end;
 }
 
 #odontologoResultado{
  display: block;
- max-width: 800px;
- background-color:#cde8f5;
+ max-width: 400px;
+ background-color:#7ad7ff;
  border-radius: 10px;
  font-family: Verdana, sans-serif;
  font-size: 12px;
- color: #040b2c;
+ color: #020f85;
  padding:30px;
 }
 
 #pacienteResultado{
  display: block;
- max-width: 800px;
- background-color:#cde8f5;
+ max-width: 400px;
+ max-height: 300px;
+ background-color:#8bbdd4;
  border-radius: 10px;
  font-family: Verdana, sans-serif;
  font-size: 12px;
@@ -198,24 +285,44 @@ h1 {
 
 #odontologoRegistrado{
  display: block;
- max-width: 800px;
- background-color:#cde8f5;
+ max-width: 300px;
+ background-color:#8bbdd4;
  border-radius: 10px;
  font-family: Verdana, sans-serif;
  font-size: 12px;
  color: #040b2c;
  padding:30px;
+ margin:0 auto;
+ text-align: center;
 }
 
+#odontologoModificado{
+    display: block;
+    max-width: 300px;
+    background-color:#8bbd
+    border-radius: 10px;
+    font-family: Verdana, s
+    font-size: 12px;
+    color: #040b2c;
+    padding:30px;
+    margin-top:10px;
+    margin-bottom: 10px;
+    margin-left: 280px;
+    text-align: center;
+   }
+
+
 #pacienteRegistrado{
- display: block;
- max-width: 800px;
- background-color:#cde8f5;
- border-radius: 10px;
- font-family: Verdana, sans-serif;
- font-size: 12px;
- color: #040b2c;
- padding:30px;
+display: block;
+max-width: 300px;
+background-color:#8bbdd4;
+border-radius: 10px;
+font-family: Verdana, sans-serif;
+font-size: 12px;
+color: #040b2c;
+padding:50px;
+margin-right: 70px;
+text-align: center;
 }
 
 
@@ -233,10 +340,25 @@ h1 {
 #div_odontologo_updating {
        display: block;
         max-width: 800px;
-        background-color:#cde8f5;
+        background-color:#79e414;
         border-radius: 10px;
         font-family: Verdana, sans-serif;
         font-size: 12px;
         color: #040b2c;
         padding:30px;
    }
+   .fondo-imagen {
+    background-image: url('/assets/imagen_fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 470px;
+}
+
+.fondo-imagen2 {
+    background-image: url('/assets/imagen_fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    opacity: 0.1;
+    z-index: -1;
+ }

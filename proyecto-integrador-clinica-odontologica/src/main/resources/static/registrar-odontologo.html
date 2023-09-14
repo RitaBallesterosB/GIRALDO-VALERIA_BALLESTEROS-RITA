@@ -20,7 +20,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <a class="navbar-brand" href="#">
-            <a href="index.html"> <img alt="Logo de la Clínica" height="70" src="assets/logo.png" width="180"></a>
+            <a href="index.html"> <img class= "logo"alt="Logo de la Clínica" height="70" src="assets/logo.png" width="200"></a>
         </a>
         <button aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"
                 class="navbar-toggler"
@@ -85,25 +85,41 @@
 
 
 <!-- Agrega tu contenido HTML para el registro de odontólogos aquí -->
-<h1>Registrar Odontólogo </h1>
-<div class="form-container">
+
+<div class="container mt-4">
+
+    <h1> Registrar Odontólogo</h1>
     <form id="registroOdontologoForm">
-        <!-- Campos del formulario para registrar odontólogo -->
-        <div class="form-group">
-            <label for="matricula">Matrícula:</label>
-            <input id="matricula" name="matricula" required type="text">
+        <div class="row2">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="matricula">Matrícula:</label>
+                    <input class="form-control" id="matricula" name="matricula" placeholder="matricula"
+                           type="text">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input class="form-control" id="nombre" name="nombre" placeholder="nombre"
+                           type="text">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="apellido">Apellido:</label>
+                    <input class="form-control" id="apellido" name="apellido" placehold
+                           type="text">
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="nombre">Nombre:</label>
-            <input id="nombre" name="nombre" required type="text">
+        <div class="text-center custom-btn">
+            <button class="btn btn-primary" type="submit">Registrar</button>
         </div>
-        <div class="form-group">
-            <label for="apellido">Apellido:</label>
-            <input id="apellido" name="apellido" required type="text">
-        </div>
-        <!-- Botón para enviar el formulario -->
-        <button class="btn btn-primary" type="submit">Registrar</button>
     </form>
+
+
+
     <div id="odontologoRegistrado" style="display:none; margin-top:10px"></div>
 </div>
 

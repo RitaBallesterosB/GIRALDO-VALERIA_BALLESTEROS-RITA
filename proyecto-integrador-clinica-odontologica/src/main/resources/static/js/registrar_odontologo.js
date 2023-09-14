@@ -3,7 +3,7 @@ window.addEventListener('load', function () {
     //Al cargar la pagina buscamos y obtenemos el formulario donde estarán
     //los datos que el usuario cargará del nuevo odontologo
     const formulario = document.getElementById('registroOdontologoForm');
-    const odontologoRegistrado = document.querySelector('#odontologoRegistrado');
+    const odontologoRegistrado = document.getElementById('odontologoRegistrado');
 
     //Ante un submit del formulario se ejecutará la siguiente funcion
     formulario.addEventListener('submit', function (event) {
@@ -18,7 +18,7 @@ window.addEventListener('load', function () {
         };
         //invocamos utilizando la función fetch la API  con el método POST que guardará
         //odontólogo que enviaremos en formato JSON
-        const url = 'odontologos/registrar';
+        const url = '/odontologos/registrar';
         const settings = {
             method: 'POST',
             headers: {
@@ -28,20 +28,25 @@ window.addEventListener('load', function () {
         }
 
         fetch(url, settings)
-            .then(response => response.json())
+            .then(response => {
+            if (!response.ok){
+                throw new Error ('Error en la solicitud');
+            }
+            return response.json();
+            })
             .then(data => {
-                 //Si no hay ningun error se muestra un mensaje diciendo que
-                 //se agrego bien
+
                  document.querySelector('#odontologoRegistrado').style.display = "block";
                  odontologoRegistrado.innerHTML = '<p>Odontólogo registrado exitosamente</p>';
                  resetUploadForm();
 
+
             })
             .catch(error => {
-             document.querySelector('#odontologoRegistrado').style.display = "block";
-                    odontologoRegistrado.innerHTML = '<p>Odontólogo no se pudo registrar</p>' ;
-             resetUploadForm();
-            })
+                     document.querySelector('#odontologoRegistrado').style.display = "block";
+                     odontologoRegistrado.innerHTML = '<p>Odontólogo no se pudo registrar</p>'
+                     resetUploadForm();
+                    })
     });
 
 
